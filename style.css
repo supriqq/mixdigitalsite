@@ -387,10 +387,8 @@ body::before {
 /* ---------------------------------------------------------------
    9. RECURSOS DA PLATAFORMA
 --------------------------------------------------------------- */
-.recursos-row { display: grid; gap: 3rem; align-items: center; }
-
-.feature-list { display: flex; flex-direction: column; gap: 1.1rem; margin: 1.5rem 0 2rem; }
-.feature-list li { display: flex; gap: .9rem; align-items: flex-start; }
+.feature-list { display: flex; flex-direction: column; gap: 1.1rem; margin: 2rem auto 0; max-width: 760px; }
+.feature-list li { display: flex; gap: .9rem; align-items: flex-start; text-align: left; }
 .feature-list strong { font-family: var(--font-display); font-size: 1rem; display: block; margin-bottom: .2rem; }
 .feature-list p { margin: 0; font-size: .9rem; }
 .feature-arrow {
@@ -401,23 +399,14 @@ body::before {
   clip-path: polygon(20% 0%, 100% 50%, 20% 100%, 20% 70%, 0% 70%, 0% 30%, 20% 30%);
 }
 
-.feature-panel {
-  background: var(--surface);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-lg);
-  padding: 1.1rem;
-  box-shadow: 0 30px 80px -30px rgba(139,92,246,.4);
+/* Em telas maiores, a lista de recursos vira uma grade 2x2 */
+@media (min-width: 720px) {
+  .feature-list-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2.5rem;
+  }
 }
-.feature-panel-bar { display: flex; gap: 6px; padding: 0 .3rem .9rem; }
-.feature-panel-bar span { width: 9px; height: 9px; border-radius: 50%; background: var(--border-strong); }
-.feature-panel-bar span:first-child { background: var(--magenta); }
-.feature-panel-bar span:nth-child(2) { background: #ffc94d; }
-.feature-panel-bar span:nth-child(3) { background: var(--cyan); }
-.feature-panel-grid { display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; height: 260px; }
-.fp-block { border-radius: 14px; }
-.fp-b1 { grid-row: 1 / 3; background: linear-gradient(160deg, rgba(59,130,246,.35), rgba(34,211,238,.12)); border: 1px solid var(--border); }
-.fp-b2 { background: linear-gradient(160deg, rgba(139,92,246,.35), rgba(217,70,239,.12)); border: 1px solid var(--border); }
-.fp-b3 { background: linear-gradient(160deg, rgba(217,70,239,.3), rgba(59,130,246,.1)); border: 1px solid var(--border); }
 
 /* ---------------------------------------------------------------
    10. DISPOSITIVOS
@@ -480,20 +469,31 @@ body::before {
 /* ---------------------------------------------------------------
    12. PLANOS
 --------------------------------------------------------------- */
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 980px) { .grid-4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .grid-4 { grid-template-columns: 1fr; } }
+
 .plans { margin-top: 2.75rem; align-items: stretch; }
 .plan-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 2rem 1.75rem;
+  padding: 2rem 1.6rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   background: linear-gradient(160deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
 }
 .plan-card h3 { font-size: 1.1rem; color: var(--text-muted); font-weight: 600; }
-.plan-price { font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; margin: .25rem 0 1.5rem; }
-.plan-price span { font-size: 1.1rem; vertical-align: top; margin-right: 2px; color: var(--cyan); }
-.plan-price small { font-size: .95rem; font-weight: 500; color: var(--text-faint); }
+.plan-price { font-family: var(--font-display); font-size: 2.1rem; font-weight: 800; margin: .25rem 0 .5rem; }
+.plan-price span { font-size: 1rem; vertical-align: top; margin-right: 2px; color: var(--cyan); }
+.plan-price small { font-size: .85rem; font-weight: 500; color: var(--text-faint); }
+.plan-savings {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--cyan);
+  margin: 0 0 1rem;
+  min-height: 1em;
+}
 .plan-features { display: flex; flex-direction: column; gap: .65rem; margin-bottom: 1.75rem; flex: 1; }
 .plan-features li { font-size: .9rem; color: var(--text-muted); padding-left: 1.4rem; position: relative; }
 .plan-features li::before {

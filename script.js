@@ -10,7 +10,7 @@
    Exemplo para (41) 99999-9999 -> "5541999999999"
 ---------------------------------------------------------------- */
 const WHATSAPP_CONFIG = {
-  numero: "5500000000000", // <-- SUBSTITUA pelo número real da Mix Digital
+  numero: "5541997383631",
   mensagemPadrao: "Olá! Quero saber mais sobre a Mix Digital."
 };
 
