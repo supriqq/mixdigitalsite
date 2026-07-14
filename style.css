@@ -488,14 +488,15 @@ body::before {
   background: linear-gradient(160deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
 }
 .plan-card h3 { font-size: 1.1rem; color: var(--text-muted); font-weight: 600; }
-.plan-price { font-family: var(--font-display); font-size: 2.1rem; font-weight: 800; margin: .25rem 0 .5rem; }
+.plan-price { font-family: var(--font-display); font-size: 2.1rem; font-weight: 800; margin: .25rem 0 0; }
 .plan-price span { font-size: 1rem; vertical-align: top; margin-right: 2px; color: var(--cyan); }
 .plan-price small { font-size: .85rem; font-weight: 500; color: var(--text-faint); }
+.plan-per-month { font-size: .82rem; color: var(--text-muted); margin: .3rem 0 0; }
 .plan-savings {
   font-family: var(--font-mono);
   font-size: .78rem;
   color: var(--cyan);
-  margin: 0 0 1rem;
+  margin: .3rem 0 1rem;
   min-height: 1em;
 }
 .plan-features { display: flex; flex-direction: column; gap: .65rem; margin-bottom: 1.75rem; flex: 1; }
